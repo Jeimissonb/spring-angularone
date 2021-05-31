@@ -2,6 +2,7 @@ package com.jeimiboy.todo.domain;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 import javax.annotation.Generated;
 import javax.persistence.Entity;
@@ -10,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import org.hibernate.tool.schema.internal.exec.GenerationTarget;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 public class Todo implements Serializable{
@@ -20,13 +23,15 @@ public class Todo implements Serializable{
 	private Integer id;
 	private String titulo;
 	private String drescricao;
-	private LocalDateTime dataParaFinalizar;
+	
+	@JsonFormat (pattern = "dd/MM/yyyy")
+	private Date dataParaFinalizar;
 	private Boolean finalizado = false;
 
 	public Todo() {
 	}
 
-	public Todo(Integer id, String titulo, String drescricao, LocalDateTime dataParaFinalizar, Boolean finalizado) {
+	public Todo(Integer id, String titulo, String drescricao, Date dataParaFinalizar, Boolean finalizado) {
 		super();
 		this.id = id;
 		this.titulo = titulo;
@@ -59,11 +64,11 @@ public class Todo implements Serializable{
 		this.drescricao = drescricao;
 	}
 
-	public LocalDateTime getDataParaFinalizar() {
+	public Date getDataParaFinalizar() {
 		return dataParaFinalizar;
 	}
 
-	public void setDataParaFinalizar(LocalDateTime dataParaFinalizar) {
+	public void setDataParaFinalizar(Date dataParaFinalizar) {
 		this.dataParaFinalizar = dataParaFinalizar;
 	}
 
