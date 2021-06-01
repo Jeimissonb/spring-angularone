@@ -30,7 +30,7 @@ public class DBService {
 		Todo t3 = new Todo(null, "Caminhar", "Exercício cardiovascular eficiente",
 				sdf.parse("27/03/2022" ), false);
 		Todo t4 = new Todo(null, "Dormir", "Como ter um sono pesado",
-				sdf.parse("28/03/2022" ), true);
+				sdf.parse("28/03/2022" ), true); 
 		
 		
 		todoRepository.saveAll(Arrays.asList(t1, t2, t3, t4));

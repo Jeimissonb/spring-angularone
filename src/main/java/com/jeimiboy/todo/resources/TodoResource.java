@@ -20,7 +20,7 @@ import com.jeimiboy.todo.domain.Todo;
 import com.jeimiboy.todo.services.TodoService;
 
 
-@CrossOrigin  (value = "*")
+@CrossOrigin  ("*")
 @RestController
 @RequestMapping (value = "/todos")
 public class TodoResource {
